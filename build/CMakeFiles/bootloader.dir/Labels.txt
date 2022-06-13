@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/CMakeFiles/bootloader
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/CMakeFiles/bootloader.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/CMakeFiles/bootloader-complete.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
