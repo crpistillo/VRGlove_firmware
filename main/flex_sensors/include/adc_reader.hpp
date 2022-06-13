@@ -23,7 +23,7 @@ public:
 
     AdcReader(adc1_channel_t channel);
 
-    void readVoltage() const;
+    uint32_t readVoltage() const;
 
 private:
     // ADC pin channel

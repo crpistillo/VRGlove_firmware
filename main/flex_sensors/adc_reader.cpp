@@ -32,7 +32,7 @@ void AdcReader::characterizeAdc() const {
                              adcCharacteristics_);
 }
 
-void AdcReader::readVoltage() const {
+uint32_t AdcReader::readVoltage() const {
     uint32_t adc_reading = 0;
     //Multisampling
     for (int i = 0; i < AdcReader::kNoOfSamples; i++) {
@@ -42,4 +42,5 @@ void AdcReader::readVoltage() const {
     //Convert adc_reading to voltage in mV
     uint32_t voltage = esp_adc_cal_raw_to_voltage(adc_reading, adcCharacteristics_);
     printf("Raw: %d\tVoltage: %dmV\n", adc_reading, voltage);
+    return voltage;
 }
