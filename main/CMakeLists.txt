@@ -1,2 +1,16 @@
 idf_component_register(SRCS "VR_glove.cpp" "flex_sensors/adc_reader.cpp" "flex_sensors/flex_sensor.cpp"
-                    INCLUDE_DIRS "flex_sensors")
+                    "bluetooth/utils/BLE2902.cpp" "bluetooth/utils/BLEAddress.cpp" 
+                    "bluetooth/utils/BLEAdvertisedDevice.cpp" "bluetooth/utils/BLEAdvertising.cpp" 
+                    "bluetooth/utils/BLECharacteristic.cpp" "bluetooth/utils/BLECharacteristicMap.cpp"
+                    "bluetooth/utils/BLEClient.cpp" "bluetooth/utils/BLEDescriptor.cpp"
+                    "bluetooth/utils/BLEDescriptorMap.cpp" "bluetooth/utils/BLEDevice.cpp" 
+                    "bluetooth/utils/BLEExceptions.cpp" "bluetooth/utils/BLERemoteCharacteristic.cpp" 
+                    "bluetooth/utils/BLERemoteDescriptor.cpp" "bluetooth/utils/BLERemoteService.cpp" 
+                    "bluetooth/utils/BLEScan.cpp" "bluetooth/utils/BLESecurity.cpp" 
+                    "bluetooth/utils/BLEServer.cpp" "bluetooth/utils/BLEService.cpp"
+                    "bluetooth/utils/BLEServiceMap.cpp" "bluetooth/utils/BLEUtils.cpp" 
+                    "bluetooth/utils/BLEUUID.cpp" "bluetooth/utils/BLEValue.cpp" 
+                    "bluetooth/utils/FreeRTOSInterface.cpp" "bluetooth/utils/GeneralUtils.cpp"
+                    "bluetooth/bluetooth/Bluetooth.cpp"
+                    INCLUDE_DIRS "flex_sensors/include" "bluetooth/utils/include" 
+                                 "bluetooth/bluetooth/include" ".")

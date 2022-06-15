@@ -1,7 +1,7 @@
-#include "include/adc_reader.hpp"
+#include "adc_reader.hpp"
 
 const uint32_t AdcReader::kDefaultVRef(1100);
-const int AdcReader::kNoOfSamples(64);
+const int AdcReader::kNoOfSamples(128);
 const adc_bits_width_t AdcReader::kCaptureWidth(ADC_WIDTH_BIT_12);
 const adc_unit_t AdcReader::kAdcUnit(ADC_UNIT_1);
 adc1_channel_t AdcReader::channel_((adc1_channel_t)ADC_CHANNEL_6);

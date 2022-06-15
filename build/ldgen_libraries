@@ -31,6 +31,7 @@
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/esp_wifi/libesp_wifi.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/lwip/liblwip.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/asio/libasio.a
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/bt/libbt.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/unity/libunity.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/cmock/libcmock.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/console/libconsole.a

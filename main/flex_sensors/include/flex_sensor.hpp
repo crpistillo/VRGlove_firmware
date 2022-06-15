@@ -10,12 +10,14 @@ public:
     // Value of the Vcc supply voltage, in mV
     static const uint32_t kSupplyVoltage;
 
-    FlexSensor();
+    FlexSensor(uint32_t r1, uint32_t r2);
 
     void updateVoltage(uint32_t voltage);
     uint32_t resistance() const;
-    uint32_t angle() const;
+    float angle() const;
 
 private:
+    uint32_t r1_;
+    uint32_t r2_;
     uint32_t voltage_;
 };

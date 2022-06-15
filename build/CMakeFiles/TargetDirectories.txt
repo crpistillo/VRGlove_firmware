@@ -356,6 +356,7 @@
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/asio/CMakeFiles/install.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/asio/CMakeFiles/install/local.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/asio/CMakeFiles/install/strip.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/bt/CMakeFiles/list_install_components.dir
