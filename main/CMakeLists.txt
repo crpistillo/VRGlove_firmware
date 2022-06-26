@@ -12,5 +12,9 @@ idf_component_register(SRCS "VR_glove.cpp" "flex_sensors/adc_reader.cpp" "flex_s
                     "bluetooth/utils/BLEUUID.cpp" "bluetooth/utils/BLEValue.cpp" 
                     "bluetooth/utils/FreeRTOSInterface.cpp" "bluetooth/utils/GeneralUtils.cpp"
                     "bluetooth/bluetooth/Bluetooth.cpp"
+                    "mpu/mpu.cpp"
+
                     INCLUDE_DIRS "flex_sensors/include" "bluetooth/utils/include" 
-                                 "bluetooth/bluetooth/include" ".")
+                                 "bluetooth/bluetooth/include" 
+                                 "mpu/include" 
+                                 ".")

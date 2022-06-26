@@ -27,11 +27,11 @@ public:
 
 private:
     // ADC pin channel
-    static adc1_channel_t channel_; 
+    adc1_channel_t channel_; 
 
     // Structure storing characteristics of an ADC
-    static esp_adc_cal_characteristics_t* adcCharacteristics_;
+    esp_adc_cal_characteristics_t* adcCharacteristics_;
 
     void configureAdc() const;
-    void characterizeAdc() const;
+    void characterizeAdc() ;
 };

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "esp-idf/app_update",
+		"source" : "/home/carolina/Documentos/embebidos/TPP/esp-idf/components/app_update"
+	}
+}

@@ -61,3 +61,5 @@
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/ulp/libulp.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/main/libmain.a
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/libI2Cbus.a
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/libMPUdriver.a

@@ -4,8 +4,6 @@ const uint32_t AdcReader::kDefaultVRef(1100);
 const int AdcReader::kNoOfSamples(128);
 const adc_bits_width_t AdcReader::kCaptureWidth(ADC_WIDTH_BIT_12);
 const adc_unit_t AdcReader::kAdcUnit(ADC_UNIT_1);
-adc1_channel_t AdcReader::channel_((adc1_channel_t)ADC_CHANNEL_6);
-esp_adc_cal_characteristics_t* AdcReader::adcCharacteristics_ = NULL;
 
 // With ADC_ATTEN_DB_11, the measurable input voltage range is: 150 mV ~ 2450 mV
 const adc_atten_t AdcReader::kAttenuation(ADC_ATTEN_DB_11);
@@ -21,7 +19,7 @@ void AdcReader::configureAdc() const {
     adc1_config_channel_atten(channel_, AdcReader::kAttenuation);
 }
 
-void AdcReader::characterizeAdc() const {
+void AdcReader::characterizeAdc() {
     adcCharacteristics_ = (esp_adc_cal_characteristics_t*) 
                            calloc(1, sizeof(esp_adc_cal_characteristics_t));
                            

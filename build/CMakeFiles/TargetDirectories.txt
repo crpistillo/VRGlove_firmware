@@ -602,3 +602,17 @@
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/main/CMakeFiles/install.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/main/CMakeFiles/install/local.dir
 /home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/main/CMakeFiles/install/strip.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/__idf_I2Cbus.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/edit_cache.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/rebuild_cache.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/list_install_components.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/install.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/install/local.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/CMakeFiles/install/strip.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/__idf_MPUdriver.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/edit_cache.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/rebuild_cache.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/list_install_components.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/install.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/install/local.dir
+/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/CMakeFiles/install/strip.dir

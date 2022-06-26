@@ -111,6 +111,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/ulp/cmake_install.cmake")
   include("/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/wifi_provisioning/cmake_install.cmake")
   include("/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/main/cmake_install.cmake")
+  include("/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/I2Cbus/cmake_install.cmake")
+  include("/home/carolina/Documentos/embebidos/TPP/esp-idf/projects/VRGlove/build/esp-idf/MPUdriver/cmake_install.cmake")
 
 endif()
 

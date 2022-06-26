@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "esp-idf/http_parser",
+		"source" : "/home/carolina/Documentos/embebidos/TPP/esp-idf/components/http_parser"
+	}
+}
