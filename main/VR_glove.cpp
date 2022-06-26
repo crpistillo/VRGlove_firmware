@@ -7,7 +7,7 @@
 #include "bluetooth/bluetooth/include/Bluetooth.hpp"
 #include "mpu/include/mpu.hpp"
 #include "mpu/include/mpu_values.hpp"
-#include <sstream>
+#include <string>
 
 extern "C"
 { 
@@ -25,7 +25,7 @@ void app_main()
 {
     MPU mpu;
    
-    /*AdcReader adcReader_thumb((adc1_channel_t)ADC_CHANNEL_0);
+    AdcReader adcReader_thumb((adc1_channel_t)ADC_CHANNEL_0);
     FlexSensor flexSensor_thumb(MIN_ANGLE_R, MAX_ANGLE_R);
 
     AdcReader adcReader_index((adc1_channel_t)ADC_CHANNEL_6);
@@ -38,79 +38,42 @@ void app_main()
     FlexSensor flexSensor_ring(MIN_ANGLE_R, MAX_ANGLE_R);
 
     AdcReader adcReader_pinky((adc1_channel_t)ADC_CHANNEL_5);
-    FlexSensor flexSensor_pinky(MIN_ANGLE_R, MAX_ANGLE_R);*/
+    FlexSensor flexSensor_pinky(MIN_ANGLE_R, MAX_ANGLE_R);
 
     Bluetooth bluetooth("ESP_32");
 
     while(1) {
-
         mpu.read();
 
-        printf("accel: [%+6.2f %+6.2f %+6.2f ] (G) \t", mpu.getAccelG().x, mpu.getAccelG().y, mpu.getAccelG().z);
-        printf("gyro: [%+7.2f %+7.2f %+7.2f ] (º/s)\n", mpu.getGyroDPS()[0], mpu.getGyroDPS()[1], mpu.getGyroDPS()[2]);
-
+        /*printf("accel: [%+6.2f %+6.2f %+6.2f ] (G) \t", mpu.getAccelG().x, mpu.getAccelG().y, mpu.getAccelG().z);
+        printf("gyro: [%+7.2f %+7.2f %+7.2f ] (º/s)\n", mpu.getGyroDPS()[0], mpu.getGyroDPS()[1], mpu.getGyroDPS()[2]);*/
         
-        /*
         flexSensor_thumb.updateVoltage(adcReader_thumb.readVoltage());
         flexSensor_index.updateVoltage(adcReader_index.readVoltage());
         flexSensor_middle.updateVoltage(adcReader_middle.readVoltage());
         flexSensor_ring.updateVoltage(adcReader_ring.readVoltage());
         flexSensor_pinky.updateVoltage(adcReader_pinky.readVoltage());
 
-        std::cout << "THUMB: " << flexSensor_thumb.angle() << std::endl;
+        /*std::cout << "THUMB: " << flexSensor_thumb.angle() << std::endl;
         std::cout << "INDEX: " << flexSensor_index.angle() << std::endl;
         std::cout << "MIDDLE: " << flexSensor_middle.angle() << std::endl;
         std::cout << "RING: " << flexSensor_ring.angle() << std::endl;
-        std::cout << "PINKY: " << flexSensor_pinky.angle() << std::endl;
+        std::cout << "PINKY: " << flexSensor_pinky.angle() << std::endl;*/
 
+        bluetooth.send(std::to_string(flexSensor_thumb.angle()), FlexSensorId::THUMB);
+        bluetooth.send(std::to_string(flexSensor_index.angle()), FlexSensorId::INDEX);
+        bluetooth.send(std::to_string(flexSensor_middle.angle()), FlexSensorId::MIDDLE);
+        bluetooth.send(std::to_string(flexSensor_ring.angle()), FlexSensorId::RING);
+        bluetooth.send(std::to_string(flexSensor_pinky.angle()), FlexSensorId::PINKY);
 
-        std::ostringstream thumb_angle;
-        thumb_angle << flexSensor_thumb.angle();
+        bluetooth.send(std::to_string(mpu.getAccelG().x), MPUValueType::ACCEL_X);
+        bluetooth.send(std::to_string(mpu.getAccelG().y), MPUValueType::ACCEL_Y);
+        bluetooth.send(std::to_string(mpu.getAccelG().z), MPUValueType::ACCEL_Z);
 
-        std::ostringstream index_angle;
-        index_angle << flexSensor_index.angle();
+        bluetooth.send(std::to_string(mpu.getGyroDPS()[0]), MPUValueType::GYRO_X);
+        bluetooth.send(std::to_string(mpu.getGyroDPS()[1]), MPUValueType::GYRO_Y);
+        bluetooth.send(std::to_string(mpu.getGyroDPS()[2]), MPUValueType::GYRO_Z);
 
-        std::ostringstream middle_angle;
-        middle_angle << flexSensor_middle.angle();
-
-        std::ostringstream ring_angle;
-        ring_angle << flexSensor_ring.angle();
-
-        std::ostringstream pinky_angle;
-        pinky_angle << flexSensor_pinky.angle();
-
-        bluetooth.send(thumb_angle.str(), FlexSensorId::THUMB);
-        bluetooth.send(index_angle.str(), FlexSensorId::INDEX);
-        bluetooth.send(middle_angle.str(), FlexSensorId::MIDDLE);
-        bluetooth.send(ring_angle.str(), FlexSensorId::RING);
-        bluetooth.send(pinky_angle.str(), FlexSensorId::PINKY);*/
-
-        std::ostringstream accel_x;
-        accel_x << mpu.getAccelG().x;
-
-        std::ostringstream accel_y;
-        accel_y << mpu.getAccelG().y;
-
-        std::ostringstream accel_z;
-        accel_z << mpu.getAccelG().z;
-
-        std::ostringstream gyro_x;
-        gyro_x << mpu.getGyroDPS()[0];
-
-        std::ostringstream gyro_y;
-        gyro_y << mpu.getGyroDPS()[1];
-
-        std::ostringstream gyro_z;
-        gyro_z << mpu.getGyroDPS()[2];
-
-        bluetooth.send(accel_x.str(), MPUValueType::ACCEL_X);
-        bluetooth.send(accel_y.str(), MPUValueType::ACCEL_Y);
-        bluetooth.send(accel_z.str(), MPUValueType::ACCEL_Z);
-
-        bluetooth.send(gyro_x.str(), MPUValueType::GYRO_X);
-        bluetooth.send(gyro_y.str(), MPUValueType::GYRO_Y);
-        bluetooth.send(gyro_z.str(), MPUValueType::GYRO_Z);
-
-        vTaskDelay(pdMS_TO_TICKS(25));
+        vTaskDelay(pdMS_TO_TICKS(10));
     }   
 }
