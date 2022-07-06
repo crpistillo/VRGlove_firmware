@@ -39,6 +39,6 @@ uint32_t AdcReader::readVoltage() const {
     adc_reading /= AdcReader::kNoOfSamples;
     //Convert adc_reading to voltage in mV
     uint32_t voltage = esp_adc_cal_raw_to_voltage(adc_reading, adcCharacteristics_);
-    printf("Raw: %d\tVoltage: %dmV\n", adc_reading, voltage);
+    //printf("Raw: %d\tVoltage: %dmV\n", adc_reading, voltage);
     return voltage;
 }

@@ -22711,7 +22711,18 @@
                         "type": "int"
                     },
                     {
-                        "children": [],
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MPU_ENABLE_DMP",
+                                "help": "Check for corrupted FIFO packet by monitoring the quaternion data and\nensuring that the magnitude is always normalized to one. This\nshouldn't happen in normal operation, but if an I2C error occurs,\nthe FIFO reads might become misaligned.",
+                                "id": "MPU_FIFO_CORRUPTION_CHECK",
+                                "name": "MPU_FIFO_CORRUPTION_CHECK",
+                                "range": null,
+                                "title": "Enable FIFO packet corruption check (DMP only)",
+                                "type": "bool"
+                            }
+                        ],
                         "depends_on": null,
                         "help": "Enable DMP (Digital Motion Processor) code to be compiled.",
                         "id": "MPU_ENABLE_DMP",
