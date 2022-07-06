@@ -9,59 +9,16 @@
 #include "esp_err.h"
 #include <math.h>
 
-#include "MPU.hpp"
-#include "MPUdmp.hpp"
-#include "dmp/types.hpp"
-#include "mpu/math.hpp"
-#include "mpu/types.hpp"
-#include "bluetooth/bluetooth/include/measurements.hpp"
-
+#include "mpu/include/mpu.hpp"
 
 extern "C"
 { 
     void app_main(); 
 }
 
-static const uint32_t MIN_ANGLE_R = 20500;
-static const uint32_t MAX_ANGLE_R = 60000;
-
-static constexpr gpio_num_t SDA = GPIO_NUM_21;
-static constexpr gpio_num_t SCL = GPIO_NUM_22;
-static constexpr uint32_t CLOCK_SPEED = 400000;  // range from 100 KHz ~ 400Hz
-
-static constexpr uint8_t kDMPOutputRate = 100; 
-
-static const char* TAG = "APP";
-
-static mpud::quat_q30_t quatRaw;
-static mpud::raw_axes_t accelRaw, gyroRaw;
-
-static MPUdmp_t mpu;
-static mpud::quat_t quat;
-static mpud::float_axes_t euler;
-static mpud::float_axes_t accelG, gyroDPS;
-
-static const mpud::dmp_feature_t kDMPFeatures =
-        (mpud::DMP_FEATURE_LP_6X_QUAT | mpud::DMP_FEATURE_GYRO_CAL | mpud::DMP_FEATURE_TAP |
-         mpud::DMP_FEATURE_SEND_CAL_GYRO | mpud::DMP_FEATURE_SEND_RAW_ACCEL);
-
 void app_main()
 {
-
-    i2c0.begin(SDA, SCL, CLOCK_SPEED);
-    mpu.setBus(i2c0);
-    mpu.setAddr(mpud::MPU_I2CADDRESS_AD0_LOW);
-
-    ESP_LOGI(TAG, "MPU connection successful!");
-   
-    ESP_ERROR_CHECK(mpu.initialize());
-    ESP_ERROR_CHECK(mpu.loadDMPFirmware());
-    ESP_ERROR_CHECK(mpu.setDMPFeatures(kDMPFeatures));
-    ESP_ERROR_CHECK(mpu.setDMPOutputRate(kDMPOutputRate));
-
-    ESP_ERROR_CHECK(mpu.enableDMP());
-
-/*    MPU mpu;*/
+    MPU mpu;
    
     AdcReader adcReader_thumb((adc1_channel_t)ADC_CHANNEL_0);
     FlexSensor flexSensor_thumb(27000, 67000);
@@ -87,23 +44,24 @@ void app_main()
         flexSensor_ring.updateVoltage(adcReader_ring.readVoltage());
         flexSensor_pinky.updateVoltage(adcReader_pinky.readVoltage());
 
-        mpu.readDMPPacket(&quatRaw, &gyroRaw, &accelRaw);
+        std::cout << "Thumb: " << flexSensor_thumb.angle() << std::endl;
+        std::cout << "Index: " << flexSensor_index.angle() << std::endl;
+        std::cout << "Middle: " << flexSensor_middle.angle() << std::endl;
+        std::cout << "Ring: " << flexSensor_ring.angle() << std::endl;
+        std::cout << "Pinky: " << flexSensor_pinky.angle() << std::endl;
 
-        mpud::axes_q16_t eulerRaw = mpud::quaternionToEuler(quatRaw);
-        quat                      = mpud::q30_to_float(quatRaw);
-        euler                     = mpud::q16_to_float(eulerRaw);
-        accelG                    = mpud::accelGravity(accelRaw, mpud::ACCEL_FS_2G);
-        gyroDPS                   = mpud::gyroDegPerSec(gyroRaw, mpud::GYRO_FS_2000DPS);
+        mpu.read();
+        mpu.printOrientation();
 
         bluetooth.send(std::to_string((int)flexSensor_thumb.angle()) + " " +
                        std::to_string((int)flexSensor_index.angle()) + " " + 
                        std::to_string((int)flexSensor_middle.angle()) + " " +
                        std::to_string((int)flexSensor_ring.angle()) + " " +
                        std::to_string((int)flexSensor_pinky.angle()) + " " +
-                       std::to_string((int)euler.x) + " " +
-                       std::to_string((int)euler.y) + " " + 
-                       std::to_string((int)euler.z));
-
+                       std::to_string((int)mpu.getOrientation().x) + " " +
+                       std::to_string((int)mpu.getOrientation().y) + " " + 
+                       std::to_string((int)mpu.getOrientation().z));        
+        
         vTaskDelay(pdMS_TO_TICKS(150));
     }   
 }
